@@ -8,7 +8,7 @@
         msg: URL == {{URL}}
 
 - name: Declare variable at task level
-  hosts; all
+  hosts: all
   tasks:
    - name: Declare and access a variable
       ansible.builtin.debug:
