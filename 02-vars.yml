@@ -4,5 +4,5 @@
     URL: play.example.com
   tasks:
    - name: Access a variable
-      ansible.builin.debug
+      ansible.builtin.debug
         msg: URL == {{URL}}
