@@ -6,3 +6,12 @@
    - name: Accessvariable
      ansible.builtin.debug:
         msg: URL == {{URL}}
+
+- name: Declare variable at task level
+  hosts; all
+  tasks:
+   - name: Declare and access a variable
+      ansible.builtin.debug:
+       msg: URL == {{URL}}
+      vars: task.example.com
+            
