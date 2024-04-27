@@ -35,3 +35,12 @@
        msg: URL == {{URL}}
      vars: 
        URL: task.example.com
+
+- name: Access facts
+  hosts: all
+  connection: local
+  tasks:
+   - name: Access fact
+     ansible.builtin.debug:
+       msg: Ansible host name == {{ansible_fqdn}}
+ 
