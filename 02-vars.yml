@@ -10,7 +10,7 @@
 - name: Declare in anoher file
   hosts: all
   vars_files:
-   - var.yml
+   - var.ymlDeclare and access a variable
   tasks:
    - name: Access variable
      ansible.builtin.debug:
@@ -23,5 +23,15 @@
      ansible.builtin.debug:
        msg: URL == {{URL}}
      vars: 
+       URL: task.examsle.com
+
+
+- name: Declare variable from invenory file
+  hosts: all
+  connection: local
+  tasks:
+   - name: Access variable
+     ansible.builtin.debug:
+       msg: URL == {{URL}}
+     vars: 
        URL: task.example.com
-            
