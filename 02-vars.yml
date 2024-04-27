@@ -42,6 +42,10 @@
   tasks: 
     - name: Run a shell command
       ansible.builtin.shell: uptime 
+      register: out
+    - name: Print output
+      ansible.builtin.debug:
+       msg: "{{out}}"
 
 - name: Access facts
   hosts: all
