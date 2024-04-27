@@ -36,6 +36,13 @@
      vars: 
        URL: task.example.com
 
+- name: Register a variable
+  hosts: all
+  connection: local
+  tasks: 
+    - name: Run a shell command
+      ansible.builtin.shell: uptime 
+
 - name: Access facts
   hosts: all
   connection: local
@@ -44,9 +51,3 @@
      ansible.builtin.debug:
        msg: Ansible host name == {{ansible_fqdn}}
 
- - name: Regiser a variable
-   hosts: all
-   connection: local
-   tasks: 
-    - name: Run a shell command
-      ansible.builtin.shell: uptime 
