@@ -11,7 +11,8 @@
   hosts: all
   tasks:
    - name: Declare and access a variable
-      ansible.builtin.debug:
+     ansible.builtin.debug:
        msg: URL == {{URL}}
-      vars: task.example.com
+     vars: 
+       URL: task.example.com
             
